@@ -1,3 +1,4 @@
+// GeneralForm.js
 import React, { Component } from "react";
 
 export default class General extends Component {
@@ -10,7 +11,6 @@ export default class General extends Component {
       address: "",
       email: "",
       phoneNumber: "",
-      userData: "",
     };
   }
 
@@ -38,23 +38,14 @@ export default class General extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    const { firstName, lastName, address, email, phoneNumber } = this.state;
-    const data = (
-      <div>
-        <p>{firstName}</p>
-        <p>{lastName}</p>
-        <p>{address}</p>
-        <p>{email}</p>
-        <p>{phoneNumber}</p>
-      </div>
-    );
-    this.setState({ userData: data });
+    this.props.handleUserData(this.state);
   };
 
   render() {
     const { firstName, lastName, address, email, phoneNumber } = this.state;
     return (
       <div>
+        <h3>General Info</h3>
         <form onSubmit={(e) => this.onFormSubmit(e)}>
           <input
             value={firstName}
@@ -73,7 +64,7 @@ export default class General extends Component {
           <input
             value={address}
             onChange={(e) => this.handleChange(e)}
-            type="text"
+            type="address"
             placeholder="Address"
             required
           />
@@ -93,10 +84,6 @@ export default class General extends Component {
           />
           <button type="submit">Submit</button>
         </form>
-        <div>
-          <h2>User Data:</h2>
-          {this.state.userData}
-        </div>
       </div>
     );
   }
