@@ -14,40 +14,21 @@ export default class General extends Component {
     };
   }
 
-  handleChange = (e) => {
-    switch (e.target.placeholder) {
-      case "First Name":
-        this.setState({ firstName: e.target.value });
-        break;
-      case "Last Name":
-        this.setState({ lastName: e.target.value });
-        break;
-      case "Address":
-        this.setState({ address: e.target.value });
-        break;
-      case "Email":
-        this.setState({ email: e.target.value });
-        break;
-      case "Phone Number":
-        this.setState({ phoneNumber: e.target.value });
-        break;
-      default:
-        break;
-    }
-  };
+  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    this.props.handleUserData(this.state);
+    this.props.handleGeneralData(this.state);
   };
 
   render() {
     const { firstName, lastName, address, email, phoneNumber } = this.state;
     return (
       <div>
-        <h3>General Info</h3>
+        <h3>General Form</h3>
         <form onSubmit={(e) => this.onFormSubmit(e)}>
           <input
+            name="firstName"
             value={firstName}
             onChange={(e) => this.handleChange(e)}
             type="text"
@@ -55,6 +36,7 @@ export default class General extends Component {
             required
           />
           <input
+            name="lastName"
             value={lastName}
             onChange={(e) => this.handleChange(e)}
             type="text"
@@ -62,6 +44,7 @@ export default class General extends Component {
             required
           />
           <input
+            name="address"
             value={address}
             onChange={(e) => this.handleChange(e)}
             type="address"
@@ -69,6 +52,7 @@ export default class General extends Component {
             required
           />
           <input
+            name="email"
             value={email}
             onChange={(e) => this.handleChange(e)}
             type="email"
@@ -76,6 +60,7 @@ export default class General extends Component {
             required
           />
           <input
+            name="phoneNumber"
             value={phoneNumber}
             onChange={(e) => this.handleChange(e)}
             type="tel"

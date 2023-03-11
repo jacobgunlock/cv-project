@@ -3,29 +3,33 @@ import React, { Component } from "react";
 import style from "./styles/style.module.css";
 import Resume from "./components/Resume";
 import GeneralForm from "./components/GeneralForm";
+import EducationForm from "./components/EducationForm";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      userData: '',
+      general: "",
+      education: [],
+      experience: [],
     };
-
-    this.handleUserData = this.handleUserData.bind(this);
   }
 
-  handleUserData = (data) => {
-    this.setState({ userData: data })
-  }
+  handleGeneralData = (data) => {
+    this.setState({ general: data });
+  };
 
   render() {
     return (
       <div className="App">
-        <GeneralForm handleUserData={this.handleUserData}/>
-        <Resume userData={this.state.userData}/>
+        <GeneralForm handleGeneralData={this.handleGeneralData} />
+        <EducationForm />
+        <Resume
+          general={this.state.general}
+          education={this.state.education}
+          experience={this.state.experience}
+        />
       </div>
     );
   }
 }
-
