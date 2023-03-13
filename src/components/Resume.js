@@ -13,8 +13,11 @@ export default class Resume extends Component {
     return (
       <div style={styling}>
         <h1>Resume</h1>
-        <GeneralInfo general={this.props.general} />
-        <EducationInfo education={this.props.education} />
+        <GeneralInfo
+        general={this.props.general} />
+        <EducationInfo
+        education={this.props.education}
+        removeEducationEntry={this.props.removeEducationEntry}/>
       </div>
     );
   }

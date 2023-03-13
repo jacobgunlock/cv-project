@@ -20,17 +20,29 @@ export default class App extends Component {
   };
 
   handleEducationData = (data) => {
-    this.setState({ education: data })
-  }
+    this.setState({ education: this.state.education.concat(data)})
+  };
+
+  removeEducationEntry = (entryToDelete) => {
+    this.setState({
+      education: this.state.education.filter(
+        (entry) => entry.id !== entryToDelete.id
+      ),
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <GeneralForm handleGeneralData={this.handleGeneralData} />
-        <EducationForm handleEducationData={this.handleEducationData} />
+        <EducationForm 
+        education={this.state.education}
+        handleEducationData={this.handleEducationData}
+         />
         <Resume
           general={this.state.general}
           education={this.state.education}
+          removeEducationEntry={this.removeEducationEntry}
           experience={this.state.experience}
         />
       </div>

@@ -13,11 +13,12 @@ export class EducationInfo extends Component {
         {edu.map(item => {
           return (
             <div key={item.id} style={styling}>
-              <p>{item.degree}</p>
-              <p>{item.university}</p>
-              <p>{item.city}</p>
-              <p>{item.years}</p>
-              <p>{item.gpa}</p>
+              <p>Degree: {item.degree}</p>
+              <p>University: {item.university}</p>
+              <p>City: {item.city}</p>
+              <p>Years Attended: {item.years}</p>
+              <p>GPA: {item.gpa}</p>
+              <button onClick={() => this.props.removeEducationEntry(item)} >delete</button>
             </div>
           )
         })}

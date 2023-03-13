@@ -6,7 +6,6 @@ export default class EducationForm extends Component {
     super(props);
 
     this.state = {
-      entries: [],
       entry: {
         degree: "",
         university: "",
@@ -20,10 +19,9 @@ export default class EducationForm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (this.state.entries.length < 3) {
-
+    if (this.props.education.length < 3) {
+      this.props.handleEducationData(this.state.entry);
       this.setState({ 
-        entries: this.state.entries.concat(this.state.entry),
         entry: {
           degree: '',
           university: '',
@@ -32,8 +30,6 @@ export default class EducationForm extends Component {
           gpa: '',
           id: uuidv4(),
         }
-      }, () => {
-        this.props.handleEducationData(this.state.entries)
       })
     } else return alert('Only 3 Entries Allowed');
   }
