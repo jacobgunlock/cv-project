@@ -14,7 +14,7 @@ export default class General extends Component {
     };
   }
 
-  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   onFormSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ export default class General extends Component {
           <input
             name="firstName"
             value={firstName}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.onChange(e)}
             type="text"
             placeholder="First Name"
             required
@@ -38,7 +38,7 @@ export default class General extends Component {
           <input
             name="lastName"
             value={lastName}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.onChange(e)}
             type="text"
             placeholder="Last Name"
             required
@@ -46,7 +46,7 @@ export default class General extends Component {
           <input
             name="address"
             value={address}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.onChange(e)}
             type="address"
             placeholder="Address"
             required
@@ -54,7 +54,7 @@ export default class General extends Component {
           <input
             name="email"
             value={email}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.onChange(e)}
             type="email"
             placeholder="Email"
             required
@@ -62,7 +62,7 @@ export default class General extends Component {
           <input
             name="phoneNumber"
             value={phoneNumber}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.onChange(e)}
             type="tel"
             placeholder="Phone Number"
             required

@@ -19,11 +19,15 @@ export default class App extends Component {
     this.setState({ general: data });
   };
 
+  handleEducationData = (data) => {
+    this.setState({ education: data })
+  }
+
   render() {
     return (
       <div className="App">
         <GeneralForm handleGeneralData={this.handleGeneralData} />
-        <EducationForm />
+        <EducationForm handleEducationData={this.handleEducationData} />
         <Resume
           general={this.state.general}
           education={this.state.education}
