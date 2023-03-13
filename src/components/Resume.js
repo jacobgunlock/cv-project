@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo";
 import EducationInfo from "./EducationInfo";
+import WorkInfo from "./WorkInfo";
 
 export default class Resume extends Component {
   render() {
@@ -18,6 +19,9 @@ export default class Resume extends Component {
         <EducationInfo
         education={this.props.education}
         removeEducationEntry={this.props.removeEducationEntry}/>
+        <WorkInfo 
+        experience={this.props.experience}
+        removeWorkEntry={this.props.removeWorkEntry} />
       </div>
     );
   }
