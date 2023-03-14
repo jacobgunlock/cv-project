@@ -1,0 +1,15 @@
+.heading {
+  margin: 5px;
+}
+
+.heading>* {
+  margin: 5px;
+}
+
+.info {
+  margin: 5px
+}
+
+.general {
+  border-bottom: solid 1px;
+}

@@ -1,0 +1,7 @@
+.resume {
+  display: grid;
+  border: solid 1px;
+  border-radius: 8px;
+  background-color: #ddd;
+  padding: 10px;
+}

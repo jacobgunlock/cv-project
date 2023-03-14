@@ -1,0 +1,11 @@
+.education>h2 {
+  border-bottom: solid 1px;
+  text-align: center;
+}
+
+.info>*{
+  margin: 5px;
+}
+
+.education {
+}

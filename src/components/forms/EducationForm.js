@@ -10,8 +10,8 @@ export default class EducationForm extends Component {
         degree: "",
         university: "",
         city: "",
+        state: "",
         years: "",
-        gpa: "",
         id: uuidv4(),
       },
     };
@@ -26,8 +26,8 @@ export default class EducationForm extends Component {
           degree: '',
           university: '',
           city: '',
+          state: '',
           years: '',
-          gpa: '',
           id: uuidv4(),
         }
       })
@@ -70,17 +70,17 @@ export default class EducationForm extends Component {
             onChange={(e) => this.onChange(e)}
           />
           <input
+            name="state"
+            type="text"
+            placeholder="State"
+            value={this.state.entry.state}
+            onChange={(e) => this.onChange(e)}
+          />
+          <input
             name="years"
             type="text"
             placeholder="Years"
             value={this.state.entry.years}
-            onChange={(e) => this.onChange(e)}
-          />
-          <input
-            name="gpa"
-            type="text"
-            placeholder="GPA"
-            value={this.state.entry.gpa}
             onChange={(e) => this.onChange(e)}
           />
           <button type="submit">Submit</button>

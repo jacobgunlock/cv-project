@@ -2,18 +2,12 @@ import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo";
 import EducationInfo from "./EducationInfo";
 import WorkInfo from "./WorkInfo";
+import '../styles/resume.css'
 
 export default class Resume extends Component {
   render() {
-    const styling = {
-      border: 'solid 1px',
-      textAlign: 'center',
-      backgroundColor: '#f0f0f0',
-    }
-    
     return (
-      <div style={styling}>
-        <h1>Resume</h1>
+      <div className="resume">
         <GeneralInfo
         general={this.props.general} />
         <EducationInfo

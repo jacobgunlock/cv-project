@@ -50,8 +50,8 @@ export default class WorkForm extends Component {
       this.state.entry;
     return (
       <div>
-        <h3>Work Experience Form</h3>
         <form onSubmit={(e) => this.onSubmit(e)}>
+          <h3>Work Experience Form</h3>
           <input
             onChange={(e) => this.onChange(e)}
             value={title}

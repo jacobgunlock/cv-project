@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
+import '../styles/work.css'
 
 export default class WorkInfo extends Component {
   render() {
     const work = this.props.experience;
-    const styling = {
-      border: 'solid 1px',
-      backgroundColor: 'light-grey',
-    }
     return (
-      <div>
+      <div className='work'>
         <h2>Work Experience</h2>
         {work.map(item => {
           return (
-          <div key={item.id} style={styling}>
+          <div key={item.id}>
             <p>Job Title: {item.title}</p>
             <p>Company: {item.company}</p>
             <p>Period Employed: {item.periodEmployed}</p>

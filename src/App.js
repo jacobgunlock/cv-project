@@ -1,10 +1,10 @@
 // App.js
 import React, { Component } from "react";
-import style from "./styles/style.module.css";
+import "./styles/style.css";
 import Resume from "./components/Resume";
-import GeneralForm from "./components/GeneralForm";
-import EducationForm from "./components/EducationForm";
-import WorkForm from "./components/WorkForm";
+import GeneralForm from "./components/forms/GeneralForm";
+import EducationForm from "./components/forms/EducationForm";
+import WorkForm from "./components/forms/WorkForm";
 
 export default class App extends Component {
   constructor(props) {
@@ -42,27 +42,34 @@ export default class App extends Component {
         (entry) => entry.id !== entryToDelete.id
       ),
     });
-  }
+  };
 
   render() {
     return (
-      <div className="App">
-        <GeneralForm handleGeneralData={this.handleGeneralData} />
-        <EducationForm
-          education={this.state.education}
-          handleEducationData={this.handleEducationData}
-        />
-        <WorkForm
-          experience={this.state.experience}
-          handleWorkData={this.handleWorkData}
-        />
-        <Resume
-          general={this.state.general}
-          education={this.state.education}
-          experience={this.state.experience}
-          removeEducationEntry={this.removeEducationEntry}
-          removeWorkEntry={this.removeWorkEntry}
-        />
+      <div className="header">
+        <h1>Resume Maker</h1>
+        <div className="App">
+          <div className="forms">
+            <GeneralForm handleGeneralData={this.handleGeneralData} />
+            <EducationForm
+              education={this.state.education}
+              handleEducationData={this.handleEducationData}
+            />
+            <WorkForm
+              experience={this.state.experience}
+              handleWorkData={this.handleWorkData}
+            />
+          </div>
+          <div className="cv">
+            <Resume
+              general={this.state.general}
+              education={this.state.education}
+              experience={this.state.experience}
+              removeEducationEntry={this.removeEducationEntry}
+              removeWorkEntry={this.removeWorkEntry}
+            />
+          </div>
+        </div>
       </div>
     );
   }

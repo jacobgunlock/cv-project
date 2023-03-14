@@ -11,6 +11,7 @@ export default class General extends Component {
       address: "",
       email: "",
       phoneNumber: "",
+      title: "",
     };
   }
 
@@ -22,11 +23,12 @@ export default class General extends Component {
   };
 
   render() {
-    const { firstName, lastName, address, email, phoneNumber } = this.state;
+    const { firstName, lastName, address, email, phoneNumber, title } =
+      this.state;
     return (
       <div>
-        <h3>General Form</h3>
         <form onSubmit={(e) => this.onFormSubmit(e)}>
+          <h3>General Form</h3>
           <input
             name="firstName"
             value={firstName}
@@ -41,6 +43,14 @@ export default class General extends Component {
             onChange={(e) => this.onChange(e)}
             type="text"
             placeholder="Last Name"
+            required
+          />
+          <input
+            name="title"
+            value={title}
+            onChange={(e) => this.onChange(e)}
+            type="text"
+            placeholder="Title"
             required
           />
           <input
